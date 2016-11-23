@@ -24,7 +24,6 @@ public class Helper {
             }
         }
         return inputLine;
-
     }
 
     public static boolean isFolderExists(File folder) {

@@ -45,19 +45,16 @@ public class Main {
         for (File f : dir.listFiles()) {
             if (f.isDirectory())
                 doZip(f, out, filter);
-            else {
-                if (filter.accept(f)) {
+            else if (filter.accept(f)) {
                     out.putNextEntry(new ZipEntry(f.getName()));// или использовать f.getPath() для отображения дерева директорий, ведущих к файлу
                     try {
                         writeFile(new FileInputStream(f), out);
                     } catch (IOException e) {
-                        System.out.println("Ошибка записи файла " + f.getPath());
-                        e.printStackTrace();
+                        System.out.println(e);
                     }
                 }
             }
         }
-    }
 
     private static void writeFile(InputStream in, OutputStream out) throws IOException {
         byte[] buffer = new byte[1024];
