@@ -1,6 +1,6 @@
 package edu.zipfilemaker;
 
-import javax.swing.filechooser.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  * Created by alex on 21.11.16.
